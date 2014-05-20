@@ -1,1 +1,17 @@
 http://www.mitbbs.com/pc/pccon_3509_273873.html 从美国如何往中国等地区邮寄和海运
+
+OpenDB opendb = new OpenDB('tablename'); //Find tablename and 
+OpenDB opendb = new OpenDB(fieldnames[]);
+opendb.query('select abc from table1 t1 inner join table2 t2 on t1.key1 = t2.key1 where ...');
+opendb.query('select abc from table1 t1 inner join table2 t2 on t1.key1 = t2.key1 where ...', opendbfieldnames[]);
+opendb.update('update table1 set f1 = ?, f2 = ?, where f3 = ?, f4 = ?'); //Matching by names.
+opendb.update('update table1 set f1 = ?, f2 = ?, where f3 = ?, f4 = ?', opendbfieldnames[]);
+opendb.setupdatetable(''); opendb.update(); or opendb.insert(); or opendb.modify();
+opendb.setsorted(field and (ascending, descending) map); //Set sorted table to true. then will be sorted when new records in/out.
+record = opendb.get(rowindex);
+Object fieldvalue = record.get(fieldname); //Primitive shall not be returned otherwise Boxing have to used.
+record1.movecorresponding(record2);
+opendb.sort(field and (ascending,descending) map); //Only when sorted table is false.
+opendb.append(record);
+opendb.collect(record, fieldslist to be added);
+
